@@ -1,0 +1,1 @@
+hold(resource, "on_suspend"); // Place resource in standby until it's required
