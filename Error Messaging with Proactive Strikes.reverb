@@ -1,0 +1,7 @@
+try {
+    criticalProcess();
+} catch(errorType) {
+    strike anticipate(errorType, "Resource Reallocation") {
+        reallocateResources();
+    }
+}
