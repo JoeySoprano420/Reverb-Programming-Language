@@ -1,0 +1,7 @@
+gauge cpuUsage(base: 70%, stretch: 10%) {
+    autoAdjust(); // Automatically adjusts based on gauge results
+}
+
+gauge memoryUsage(base: 65%, adaptive) {
+    increaseThresholdOnDemand(); // Threshold increases dynamically as memory usage grows
+}
