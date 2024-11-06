@@ -1,0 +1,5 @@
+try {
+    criticalProcess();
+} catch(errorType) {
+    raise(errorType, "Critical fault - resource reallocation recommended.");
+}
