@@ -1,0 +1,7 @@
+try {
+    criticalProcess();
+} catch(autoGauge(memoryError)) {
+    gauge memoryUsage(adaptive) {
+        autoReduceLoad(); // Automatically reduces memory load to prevent error
+    }
+}
