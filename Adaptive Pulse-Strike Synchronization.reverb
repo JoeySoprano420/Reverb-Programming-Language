@@ -1,0 +1,5 @@
+pulse layer(1) monitor processRate(maxThreshold: 70%) {
+    strike if thresholdExceeded(processRate) anticipate coolingCycle() {
+        coolProcess();
+    }
+}
