@@ -1,0 +1,4 @@
+pulse layer(1) stabilize memoryUsage(maxThreshold: 80%) {
+    activateStabilizer();
+    allocate(); // Allocate only what's needed based on pulse layer
+}
