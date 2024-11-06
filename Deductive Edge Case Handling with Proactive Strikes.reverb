@@ -1,0 +1,5 @@
+strike anticipate(dataProcessing) with priority(1), deductive {
+    if (detectEdgeCase("largeDataSet")) {
+        applyPreemptiveScaling(); // Deductively scales resources based on data size
+    }
+}
