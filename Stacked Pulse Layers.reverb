@@ -1,0 +1,6 @@
+pulse layer(2) stabilize cpuLoad(maxThreshold: 90%) {
+    if (load > maxThreshold) adjustResources();
+}
+pulse layer(3) stabilize ioRate(maxThreshold: 75%) {
+    delayNonCriticalIO();
+}
