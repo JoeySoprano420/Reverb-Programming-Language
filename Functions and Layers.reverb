@@ -1,0 +1,3 @@
+layer(2) function calcIntensity(value1, value2) {
+    return (value1 ⊕ value2); // Inverse Boolean Concatenation
+}
