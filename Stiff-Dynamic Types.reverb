@@ -1,0 +1,2 @@
+var value: dynamic = "initial";
+stiffen(value, int); // Locks value into an integer type if specified conditions are met
