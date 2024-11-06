@@ -1,0 +1,10 @@
+try {
+    processIntensiveTask();
+} catch(exceptionType, selfHeal) {
+    reason(exceptionType) {
+        // The language tests different recovery methods until it stabilizes
+        attempt { reduceTaskIntensity() }
+        or { reallocateMemory() }
+        or { throttleSecondaryProcesses() }
+    }
+}
