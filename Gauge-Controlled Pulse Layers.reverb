@@ -1,0 +1,11 @@
+pulse layer(1) stabilize cpuLoad(maxThreshold: 80%) {
+    gauge auto cpuUsage(base: 70%) {
+        activatePulseLayer(); // Automatically activates the pulse when threshold is reached
+    }
+}
+
+pulse layer(2) stabilize memoryLoad {
+    gauge memoryUsage(adaptive) {
+        increasePulseIntensity(); // Boosts pulse intensity as memory load rises
+    }
+}
