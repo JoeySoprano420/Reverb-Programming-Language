@@ -1,0 +1,7 @@
+gauge memoryUsage(base: 80%) {
+    deductive reason "memoryLeak" {
+        if (detectSimilarIssue()) applyPriorSolution();
+        else if (diagnoseLeakSource()) mitigateLeak();
+        else notify("Complex memory issue - manual intervention recommended");
+    }
+}
