@@ -1,0 +1,8 @@
+try {
+    performComplexOperation();
+} catch(edgeCase, deductive) {
+    reason(edgeCase) {
+        suggest("Consider alternative data structure for performance") if detectDataStructureIssue();
+        attemptFallback() if detectFallbackPossible();
+    }
+}
