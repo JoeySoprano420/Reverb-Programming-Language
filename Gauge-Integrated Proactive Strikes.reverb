@@ -1,0 +1,5 @@
+strike anticipate dataRetrieval() with priority(3) {
+    gauge ioRate(base: 50%) {
+        preloadDataIfBelowThreshold(); // Executes only if I/O rate is within optimal range
+    }
+}
