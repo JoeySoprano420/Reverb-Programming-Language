@@ -17,3 +17,14 @@ void ReverbRuntime::executeGauge(int base, int stretch) {
     }
     // Existing implementation...
 }
+class APIHandler {
+public:
+    explicit APIHandler(const std::string& baseUrl) : baseUrl(baseUrl) {}
+
+    std::string getData(const std::string& endpoint) {
+        // Implement API data fetching
+    }
+
+private:
+    std::string baseUrl;
+};
