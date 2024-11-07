@@ -172,3 +172,45 @@ int main(int argc, char *argv[]) {
     window.show();
     return app.exec();
 }
+class ReverbREPL {
+public:
+    ReverbREPL() : runtime(std::make_unique<ReverbRuntime>()), library(std::make_unique<ReverbStandardLibrary>()), pool(std::thread::hardware_concurrency()) {}
+
+    void start() {
+        std::string input;
+        std::cout << "Welcome to Reverb REPL! Type 'exit' to quit or 'help' for commands." << std::endl;
+
+        while (true) {
+            std::cout << "Reverb> ";
+            std::getline(std::cin, input);
+
+            if (input == "exit") {
+                break;
+            }
+
+            if (input == "help") {
+                displayHelp();
+                continue;
+            }
+
+            // Enqueue the command for execution
+            pool.enqueue([this, input] {
+                try {
+                    auto tokens = tokenize(input);
+                    auto program = parser.parseProgram(tokens);
+                    executeProgram(*program);
+                } catch (const std::exception& e) {
+                    runtime->reportError(e.what());
+                }
+            });
+        }
+    }
+
+private:
+    ThreadPool pool; // ThreadPool for handling multithreading
+    std::unique_ptr<ReverbRuntime> runtime;
+    std::unique_ptr<ReverbStandardLibrary> library; 
+    Parser parser; // Assume the parser is already defined
+
+    // Tokenization function and other methods remain unchanged
+};
