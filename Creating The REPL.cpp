@@ -244,3 +244,24 @@ private:
     Parser parser;
     // Other members...
 };
+
+class ReverbREPL {
+public:
+    void run() {
+        std::string input;
+        while (true) {
+            std::cout << "> ";
+            std::getline(std::cin, input);
+            if (input == "exit") break; // Exit command
+            try {
+                auto tokens = tokenize(input); // Tokenization logic
+                Parser parser(tokens);
+                auto ast = parser.parse();
+                ReverbRuntime runtime;
+                runtime.execute(*ast);
+            } catch (const std::exception& e) {
+                std::cerr << "Runtime error: " << e.what() << std::endl;
+            }
+        }
+    }
+};
