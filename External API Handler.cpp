@@ -28,3 +28,16 @@ public:
 private:
     std::string baseUrl;
 };
+
+class APIHandler {
+public:
+    explicit APIHandler(const std::string& baseUrl) : baseUrl(baseUrl) {}
+
+    std::string getData(const std::string& endpoint) {
+        // Implementation to fetch data from the API
+        // Use a networking library to handle HTTP requests
+    }
+
+private:
+    std::string baseUrl;
+};
