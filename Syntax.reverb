@@ -28,3 +28,41 @@ for (var i = 0; i < 10; i++) {
 while (condition) {
     // Code block
 }
+
+// Function definition
+function pulseControl(name: String, frequency: Int) {
+    // Function body
+}
+
+// Gauge definition
+gauge cpuUsage(base: Float, stretch: Float) {
+    autoAdjust(); // Automatically adjusts based on gauge results
+}
+
+// Memory usage gauge
+gauge memoryUsage(base: Float, adaptive: Bool) {
+    increaseThresholdOnDemand(); // Dynamic threshold increase
+}
+
+// Conditional statements
+if (condition) {
+    // Code block
+} else {
+    // Alternative code block
+}
+
+// Loop structures
+for (var i = 0; i < 10; i++) {
+    // Code block
+}
+
+while (condition) {
+    // Code block
+}
+
+// Error handling
+try {
+    // Code block
+} catch (ErrorType e) {
+    reportError(e.message);
+}
