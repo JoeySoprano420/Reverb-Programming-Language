@@ -214,3 +214,12 @@ private:
 
     // Tokenization function and other methods remain unchanged
 };
+void sendToDistributedServer(const std::string& command) {
+    DistributedClient client("tcp://localhost:5555");
+    client.sendCommand(command);
+}
+
+// Modify executeCommand() to include distributed execution logic:
+if (input.starts_with("dist ")) {
+    sendToDistributedServer(input.substr(5)); // Remove "dist " prefix
+}
