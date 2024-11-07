@@ -123,3 +123,9 @@ void fetchDataFromAPI(const std::string& endpoint) {
     std::string data = apiHandler.getData(endpoint);
     std::cout << "Data from API: " << data << std::endl;
 }
+void executeProgram(const ProgramNode& program) {
+    PerformanceTester tester;
+    tester.startTiming();
+    // Existing execution code...
+    tester.stopTiming();
+}
