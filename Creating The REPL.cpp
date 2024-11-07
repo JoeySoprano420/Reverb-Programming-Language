@@ -223,3 +223,24 @@ void sendToDistributedServer(const std::string& command) {
 if (input.starts_with("dist ")) {
     sendToDistributedServer(input.substr(5)); // Remove "dist " prefix
 }
+class ReverbREPL {
+public:
+    void start() {
+        std::string input;
+        while (true) {
+            std::cout << "Reverb> ";
+            std::getline(std::cin, input);
+            if (input == "exit") break;
+
+            // Tokenize and parse the input
+            auto tokens = tokenize(input);
+            auto program = parser.parse(tokens);
+            runtime.execute(*program);
+        }
+    }
+
+private:
+    ReverbRuntime runtime;
+    Parser parser;
+    // Other members...
+};
