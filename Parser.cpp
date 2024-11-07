@@ -196,3 +196,36 @@ private:
         return std::stoi(token.value);
     }
 };
+class Parser {
+public:
+    explicit Parser(const std::vector<Token>& tokens) : tokens(tokens), position(0) {}
+
+    std::unique_ptr<Node> parse() {
+        // Parse logic goes here
+        return parseProgram();
+    }
+
+private:
+    std::vector<Token> tokens;
+    size_t position;
+
+    std::unique_ptr<Node> parseProgram() {
+        // Parse program logic
+    }
+
+    std::unique_ptr<Node> parseFunction() {
+        // Parse function logic
+    }
+
+    std::unique_ptr<Node> parseGauge() {
+        // Parse gauge logic
+    }
+    
+    std::unique_ptr<Node> parseConditional() {
+        // Parse conditional logic
+    }
+
+    std::unique_ptr<Node> parseLoop() {
+        // Parse loop logic
+    }
+};
