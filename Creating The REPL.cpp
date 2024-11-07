@@ -118,3 +118,8 @@ private:
         std::cout << " - help: Show this help message.\n";
     }
 };
+void fetchDataFromAPI(const std::string& endpoint) {
+    APIHandler apiHandler("https://api.example.com/");
+    std::string data = apiHandler.getData(endpoint);
+    std::cout << "Data from API: " << data << std::endl;
+}
